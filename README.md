@@ -12,8 +12,8 @@ Android Application to track any user search activity on Github  using the Githu
 - GSON
 - Moshi
 - Kotlin Courtines.
-- Glide
--Data-Binding
+- Glide.
+-Data-Binding.
 -SQL-queries.
 
 This app demonstrates the following views and techniques from the below documentation.
@@ -39,7 +39,6 @@ To get started with this project, simply pull the repository and import the proj
 * [Google Developers Console](https://console.developers.google.com/)
 
 ## 🚀 Features & Suggested Workflow
-- Explore all in one screen.
 - Get list of latest repositories based on search.
 - Get details of all the repositories search once click on the item in the list.(Screen 1)
 - Get specfic data of any repository owner user. (Screen 2)
