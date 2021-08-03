@@ -36,14 +36,13 @@ It leverages the following components from the Jetpack library:
 
 To get started with this project, simply pull the repository and import the project into Android Studio. From there, deploy the project to an emulator or device. 
 
-* NOTE: In order for this project to pull data, you will not need to add your API Key and please sure the internet connectivity is good.The Api is used without taking the access token which is permissiable but can access to some limit.Please dont panic if you find some error in between, its the Apis sending us :)
+* NOTE: In order for this project to pull data, you no need to add your API Key and please sure the internet connectivity is good.The Api is used without taking the access token which is permissiable but can access to some limit .Please dont panic if you find some error in between, its the Apis sending us :)
 * [Google Developers Console](https://console.developers.google.com/)
 
 ## 🚀 Features & Suggested Workflow
-- Get list of latest repositories based on search.
-- Get details of all the repositories search once click on the item in the list.(Screen 1)
-- Get specfic data of any repository owner user. (Screen 2)
-- User the User details on Web Browser.(Screen 3)
+- Get list of latest repositories based on search.(Screen 1)
+- Get details of any specific repository .On clicking on the item in the list.(Screen 2)
+- User details on Web Browser.(Screen 3).Please click on GitHub Icon on Screen2, right of "Repository Last Used field"
 - Clean MVVM Architecture.
 
 
