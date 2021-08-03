@@ -42,7 +42,7 @@ To get started with this project, simply pull the repository and import the proj
 ## 🚀 Features & Suggested Workflow
 - Get list of latest repositories based on search.(Screen 1)
 - Get details of any specific repository .On clicking on the item in the list.(Screen 2)
-- User details on Web Browser.(Screen 3)
+- User details on Web Browser.(Screen 3).Please click on GitHub Icon on Screen2, right of "Repository Last Used field"
 - Clean MVVM Architecture.
 
 
