@@ -36,7 +36,7 @@ It leverages the following components from the Jetpack library:
 
 To get started with this project, simply pull the repository and import the project into Android Studio. From there, deploy the project to an emulator or device. 
 
-* NOTE: In order for this project to pull data, you will not need to add your API Key and please sure the internet connectivity is good.The Api is used without taking the access token which is permissiable but can access to some limit.Please dont panic if you find some error in between, its the Apis sending us :)
+* NOTE: In order for this project to pull data, you no need to add your API Key and please sure the internet connectivity is good.The Api is used without taking the access token which is permissiable but can access to some limit .Please dont panic if you find some error in between, its the Apis sending us :)
 * [Google Developers Console](https://console.developers.google.com/)
 
 ## 🚀 Features & Suggested Workflow
