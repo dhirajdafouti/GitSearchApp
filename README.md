@@ -1,6 +1,6 @@
 ## GitHub Search Application
 
-Android Application to track any user search activity on Github built using the Github Developers Api. A sample application to demonstrate how to use Jetpack Architecture Components in an Android Application following the Clean MVVM Architecture concepts.
+Android Application to track any user search activity on Github  using the Github Developers Api. A sample application to demonstrate how to use Jetpack Architecture Components in an Android Application following the Clean MVVM Architecture concepts.
 
 ## ⚙ Tech used
 - Github Api
