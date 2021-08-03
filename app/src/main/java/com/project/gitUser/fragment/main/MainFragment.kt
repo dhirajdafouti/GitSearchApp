@@ -1,6 +1,8 @@
 package com.project.gitUser.fragment.main
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -19,15 +21,19 @@ import com.project.gitUser.fragment.base.BaseFragment
 import com.project.gitUser.utils.GitUserSearchResult
 import com.project.gitUser.viewmodel.MainViewModel
 import com.project.gitUser.viewmodel.ViewModelFactory
+import timber.log.Timber
 
 
 class MainFragment : BaseFragment() {
+    //Instance of View Binding
     private lateinit var binding: FragmentMainBinding
+    //View Model InStance
     private val viewModel: MainViewModel by lazy {
         val activity = requireNotNull(this.activity).application
         val viewModelFactory = ViewModelFactory(activity)
         ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
     }
+
     lateinit var adapter: ReposAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,6 +79,10 @@ class MainFragment : BaseFragment() {
         outState.putString(LAST_SEARCH_QUERY, binding.searchRepo.text.trim().toString())
     }
 
+    /**
+     * Initialize the Adapter.
+     */
+    @SuppressLint("TimberArgCount")
     private fun initAdapter() {
         binding.list.adapter = adapter
         viewModel.repoResult.observe(viewLifecycleOwner, Observer {
@@ -82,9 +92,10 @@ class MainFragment : BaseFragment() {
                     adapter.submitList(it.data)
                 }
                 is GitUserSearchResult.Error -> {
+                    Timber.d("Error Received",{it.error})
                     Toast.makeText(
                         activity,
-                        "No Internet or Server Connection Error!!\n Loading Data Locally..",
+                        "No Internet or Server Connection Error!!",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

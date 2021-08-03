@@ -4,9 +4,9 @@ import com.project.gitUser.database.GitUserDatabase
 import com.squareup.moshi.Json
 
 /**
- * DataTransferObjects go in this file/database. These are responsible for parsing responses from the server
- * or formatting objects to send to the server. You should convert these to domain objects before
- * using them.
+ * Network DataTransferObjects converted to the database object. These are responsible for parsing responses from the server
+ * or formatting objects to send to the server. Converting  to database objects before
+ * storing them.
  */
 
 data class GitSearchResponse(
@@ -33,6 +33,8 @@ data class GitUserSearchInfo(
 
 data class NetworkGitUserSearchDataObject(var gitSearchResponse: List<GitUserSearchInfo>)
 
+
+//Converting the network data object to database objects.
 fun NetworkGitUserSearchDataObject.asDatabaseModel(): List<GitUserDatabase> {
     return gitSearchResponse.map {
         GitUserDatabase(

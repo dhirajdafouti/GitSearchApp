@@ -19,6 +19,7 @@ abstract class GitUserRoomDataBase : RoomDatabase() {
 private lateinit var INSTANCE: GitUserRoomDataBase
 
 /**
+ * This database will be the Single Source of Truth.
  * The method will provide the instance of GitUserRoom Database.
  * The instance will be initialized once it is called first time.
  * After the repeatable calls will provide the same instance, as creating the instance of Database is expensive.

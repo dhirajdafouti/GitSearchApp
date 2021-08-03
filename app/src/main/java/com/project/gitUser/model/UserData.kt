@@ -28,6 +28,7 @@ data class UserData(
 
 data class DataBaseDomainToUserDomain(var databaseData: List<GitUserDatabase>)
 
+//Converting the database data object to domain objects.
 fun DataBaseDomainToUserDomain.asDomainModel(): List<UserData> {
     return databaseData.map {
         UserData(

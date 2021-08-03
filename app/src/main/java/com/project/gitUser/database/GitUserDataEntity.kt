@@ -4,6 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * Entity class for the which defines the Git Table in the GitUser DataBase.
+ */
 @Entity(tableName = "gitUserTable")
 data class GitUserDatabase(
     @PrimaryKey(autoGenerate = true)
@@ -30,6 +33,6 @@ data class GitUserDatabase(
     val createdAt: String?,
     @ColumnInfo(name = "updated_at")
     val updated: String?,
-    @ColumnInfo(name="avatar_url")
-    val avatar_url:String?
+    @ColumnInfo(name = "avatar_url")
+    val avatar_url: String?
 )

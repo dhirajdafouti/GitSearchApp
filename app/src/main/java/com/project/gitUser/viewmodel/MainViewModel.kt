@@ -10,19 +10,28 @@ import com.project.gitUser.repository.GitUserRepository
 import com.project.gitUser.utils.GitUserSearchResult
 import kotlinx.coroutines.launch
 
+//The View Model class which acts as a interface between the view and Data.
 class MainViewModel(private val application: Application) : ViewModel() {
 
+    //The Instance of repository class.
+
     private val repository = GitUserRepository(application)
+
     private val _navigateToDetailFragment = MutableLiveData<UserData>()
     val navigateToDetailFragment: LiveData<UserData>
         get() = _navigateToDetailFragment
+
+
+    //live data for the search result from the Single Source of truth.
     private val queryLiveData = MutableLiveData<String>()
     val repoResult: LiveData<GitUserSearchResult>
         get() =
             repository.searchResults
 
+    //live data variable for progress bar.
     val progressBar: LiveData<Boolean>
         get() = repository.progressBar
+
 
     fun shownAsteroidDetail() {
         _navigateToDetailFragment.value = null
@@ -32,6 +41,7 @@ class MainViewModel(private val application: Application) : ViewModel() {
         _navigateToDetailFragment.value = userData
     }
 
+    //search  based on query passed.
     fun searchGitRepository(queryString: String) {
         queryLiveData.value = queryString
         viewModelScope.launch {

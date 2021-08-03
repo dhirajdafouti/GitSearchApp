@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.project.gitUser.constants.Constants.IN_QUALIFIER
 import com.project.gitUser.constants.Constants.NETWORK_PAGE_SIZE
-import com.project.gitUser.database.GitUserRoomDataBase
 import com.project.gitUser.database.getDataBase
 import com.project.gitUser.model.UserData
 import com.project.gitUser.network.NetworkGitUserSearchDataObject
@@ -30,12 +29,12 @@ class GitUserRepository(private val application: Application) {
     // avoid triggering multiple requests in the same time
     private var isRequestInProgress = false
 
-
+    //The Suspend method will request for Search data to the Network.
     suspend fun getSearchResultStream(queryString: String): MutableLiveData<GitUserSearchResult> {
         _progresssBar.value = true
         withContext(Dispatchers.IO) {
             deleteOlderDataBaseTables()
-            requestAndSaveData(queryString)
+            requestAndSaveToDataBase(queryString)
         }
         _progresssBar.value = false
         return searchResults
@@ -46,7 +45,7 @@ class GitUserRepository(private val application: Application) {
         dataBase.gitUserDao.deleteGitRepo()
     }
 
-    private suspend fun requestAndSaveData(query: String): Boolean {
+    private suspend fun requestAndSaveToDataBase(query: String): Boolean {
         var successful = false
         isRequestInProgress = true
         val apiQuery = query + IN_QUALIFIER
@@ -93,7 +92,7 @@ class GitUserRepository(private val application: Application) {
 
     suspend fun requestMore(query: String) {
         if (isRequestInProgress) return
-        val successful = requestAndSaveData(query)
+        val successful = requestAndSaveToDataBase(query)
         if (successful) {
             lastRequestedPage++
         }
