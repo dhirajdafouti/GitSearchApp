@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 /**
- * The interface which will interact with Database to get the Git User Data from database.
+ * The interface which will interact with Database to get the Git User Search Data from database.
  */
 @Dao
 interface GitUserDao {
