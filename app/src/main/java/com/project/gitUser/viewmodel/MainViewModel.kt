@@ -9,6 +9,7 @@ import com.project.gitUser.model.UserData
 import com.project.gitUser.repository.GitUserRepository
 import com.project.gitUser.utils.GitUserSearchResult
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 //The View Model class which acts as a interface between the view and Data.
 class MainViewModel(private val application: Application) : ViewModel() {
@@ -38,7 +39,11 @@ class MainViewModel(private val application: Application) : ViewModel() {
     }
 
     fun setUserData(userData: UserData) {
-        _navigateToDetailFragment.value = userData
+        if(userData!=null) {
+            _navigateToDetailFragment.value = userData
+        }else{
+         Timber.d("Nothing to set!!!")
+        }
     }
 
     //search  based on query passed.
