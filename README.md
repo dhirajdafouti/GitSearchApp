@@ -1,6 +1,7 @@
 ## GitHub Search Application
 
-Android Application to track any user search activity on Github  using the Github Developers Api. A sample application to demonstrate how to use Jetpack Architecture Components in an Android Application following the Clean MVVM Architecture concepts.
+ Using the Github Developers Api.The application will provide two functionalities, Search repositories and Search User on github.
+A sample application to demonstrate how to use Jetpack Architecture Components in an Android Application following the Clean MVVM Architecture concepts.
 
 ## ⚙ Tech used
 - Github Api
@@ -35,7 +36,7 @@ It leverages the following components from the Jetpack library:
 
 To get started with this project, simply pull the repository and import the project into Android Studio. From there, deploy the project to an emulator or device. 
 
-* NOTE: In order for this project to pull data, you will not need to add your API Key and please sure the internet connectivity is good.The Api is used with with outtaking the access token which is permissiable but can access to some limit.Please dont panic if you find some error in between, its the Apis sending us :)
+* NOTE: In order for this project to pull data, you will not need to add your API Key and please sure the internet connectivity is good.The Api is used without taking the access token which is permissiable but can access to some limit.Please dont panic if you find some error in between, its the Apis sending us :)
 * [Google Developers Console](https://console.developers.google.com/)
 
 ## 🚀 Features & Suggested Workflow
@@ -52,7 +53,11 @@ Notice any issues with a repository? Please file a github issue in the repositor
 
 ## 📷 Screenshots
 <img src ="./screensort/Screenshot_1627978813.png" width="260" />
-<img src ="./screensort/Screenshot_1627978813.png" width="260" />
+<img src ="./screensort/Screenshot_1627978877.png" width="260" />
+<img src ="./screensort/Screenshot_1627984066.png" width="260" />
+<img src ="./screensort/Screenshot_1627984071.png" width="260" />
+<img src ="./screensort/Screenshot_1627984103.png" width="260" />
+<img src ="./screensort/Screenshot_1627984159.png" width="260" />
 
 
 ## 🎯 Requirements
